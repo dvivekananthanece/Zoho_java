@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+public class findNThTermNumberSystem{
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int limit = sc.nextInt();
+		int[] numArray = new int[10000];
+		int lim = 0;
+		for(int i=0;i<10000;i++) {
+			String temp = Integer.toString(i);
+			if(temp.contains("3") || temp.contains("4")) {
+				if(!temp.contains("1") && !temp.contains("2") &&
+						!temp.contains("5") && !temp.contains("6")
+						&& !temp.contains("7") && !temp.contains("8")
+						&&!temp.contains("9") && !temp.contains("0")) {
+				numArray[lim] = i;
+				lim++;
+				}
+			}
+		}
+		for(int i=0;i<lim;i++) {
+			System.out.println(i+" "+numArray[i]);
+		}
+		System.out.println("Limit"+numArray[limit-1]);
+		
+	}
+
+}
