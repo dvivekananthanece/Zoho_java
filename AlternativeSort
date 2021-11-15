@@ -1,1 +1,27 @@
+import java.util.*;
+public class AlternativeSort{
 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int limit = sc.nextInt();
+		int[] sortArray = new int[limit];
+		for(int i =0; i<limit; i++) { 
+			sortArray[i] = sc.nextInt();
+		}
+		sortArrays(limit , sortArray);
+		
+	}
+	public static void sortArrays(int limit , int[] sorted) {	
+		Arrays.sort(sorted);
+		int initial =0;
+		int last = limit-1;
+		    while(initial<last) {		    	
+				System.out.print(sorted[last--]);
+				System.out.print(sorted[initial++]);
+		    }		
+			if(limit/2!=0) {
+				System.out.print(sorted[initial]);
+			}
+	}
+
+}
